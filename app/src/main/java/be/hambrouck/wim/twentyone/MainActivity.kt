@@ -16,21 +16,30 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         updateFields()
+
+        btn_hit_me.setOnClickListener {
+            spel.geefKaartAanSpeler()
+            updateTotalen()
+            if(spel.totaalSpeler == 21)
+            {
+                txt_kaarten_speler.text = getString(R.string.gewonnen)
+            } else if (spel.totaalSpeler > 21)
+            {
+                txt_kaarten_speler.text = getString(R.string.verloren)
+                btn_hit_me.isEnabled = false
+            } else {
+                updateKaartenrij()
+            }
+        }
     }
 
-    fun updateFields()
+    private fun updateFields()
     {
+        updateTotalen()
+        updateKaartenrij()
+    }
 
-        txt_totaal_speler.text = getString(R.string.totaal, spel.totaalSpeler)
-
-        if(spelerBeurt)
-        {
-            txt_totaal_pc.text = ""
-
-        } else {
-            txt_totaal_pc.text = getString(R.string.totaal, spel.totaalPc)
-        }
-
+    private fun updateKaartenrij() {
         var i = 0
         for (kaart in spel.kaartenPc) {
             if (spelerBeurt && i == 0) {
@@ -42,10 +51,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         i = 0
-        for (kaart in spel.kaartenSpeler)
-        {
-            if(i == 0)
-            {
+        for (kaart in spel.kaartenSpeler) {
+            if (i == 0) {
                 txt_kaarten_speler.text = kaart.naam
                 i++
             } else {
@@ -53,4 +60,17 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun updateTotalen() {
+        txt_totaal_speler.text = getString(R.string.totaal, spel.totaalSpeler)
+
+        if (spelerBeurt) {
+            txt_totaal_pc.text = ""
+
+        } else {
+            txt_totaal_pc.text = getString(R.string.totaal, spel.totaalPc)
+        }
+    }
+
+
 }

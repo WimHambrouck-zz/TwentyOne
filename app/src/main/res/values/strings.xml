@@ -6,4 +6,6 @@
     <string name="hit_me">Hit me!</string>
     <string name="wachten">Wachten</string>
     <string name="kaartenrij">%1$s, %2$s</string>
+    <string name="gewonnen">Gewonnen!</string>
+    <string name="verloren">KAPUT</string>
 </resources>

@@ -29,13 +29,13 @@ class Spel {
         geefKaartAanPc()
     }
 
-    private fun geefKaartAanSpeler() {
+    fun geefKaartAanSpeler() {
         val temp = deck.geefKaart()
         kaartenSpeler.add(temp)
         totaalSpeler += waardeVan(temp)
     }
 
-    private fun geefKaartAanPc() {
+    fun geefKaartAanPc() {
         val temp = deck.geefKaart()
         kaartenPc.add(temp)
         totaalPc += waardeVan(temp)
