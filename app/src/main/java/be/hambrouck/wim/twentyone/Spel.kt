@@ -1,7 +1,9 @@
 package be.hambrouck.wim.twentyone
 
 class Spel {
-    val score = 500
+    val geld = 500
+    val totaalPc = 0
+    var totaalSpeler = 0
     val deck = Deck()
 
     fun hitMe() : Kaart {

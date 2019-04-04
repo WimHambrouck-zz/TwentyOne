@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">TwentyOne</string>
+    <string name="computer">Computer:</string>
+    <string name="totaal">Totaal: %1$d</string>
+    <string name="speler">Speler:</string>
+    <string name="hit_me">Hit me!</string>
+    <string name="wachten">Wachten</string>
 </resources>
