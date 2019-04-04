@@ -2,11 +2,56 @@ package be.hambrouck.wim.twentyone
 
 class Spel {
     val geld = 500
-    val totaalPc = 0
-    var totaalSpeler = 0
-    val deck = Deck()
 
-    fun hitMe() : Kaart {
-        return deck.geefKaart()
+    private val deck = Deck()
+    lateinit var kaartenPc: MutableList<Kaart>
+    lateinit var kaartenSpeler: MutableList<Kaart>
+
+    var totaalPc = 0
+        private set
+
+    var totaalSpeler = 0
+        private set
+
+    init {
+        reset()
     }
+
+    fun reset() {
+        kaartenPc = mutableListOf()
+        kaartenSpeler = mutableListOf()
+        deck.schudden()
+
+        geefKaartAanSpeler()
+        geefKaartAanSpeler()
+
+        geefKaartAanPc()
+        geefKaartAanPc()
+    }
+
+    private fun geefKaartAanSpeler() {
+        val temp = deck.geefKaart()
+        kaartenSpeler.add(temp)
+        totaalSpeler += waardeVan(temp)
+    }
+
+    private fun geefKaartAanPc() {
+        val temp = deck.geefKaart()
+        kaartenPc.add(temp)
+        totaalPc += waardeVan(temp)
+    }
+
+    private fun waardeVan(kaart: Kaart): Int {
+        return when(kaart.naam) {
+            "2", "3", "4", "5", "6", "7", "8", "9", "10" -> kaart.naam.toInt()
+            "A" -> 1
+            "B" -> 10
+            "D" -> 10
+            "H" -> 10
+            else -> 0
+        }
+    }
+
+
+
 }

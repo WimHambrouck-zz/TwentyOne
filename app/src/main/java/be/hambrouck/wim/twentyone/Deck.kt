@@ -2,7 +2,7 @@ package be.hambrouck.wim.twentyone
 
 
 
-class Deck(val geschud: Boolean = true) {
+class Deck(geschud: Boolean = true) {
     private val kaarten = listOf(
         Kaart("A", Kleur.SCHOPPEN),
         Kaart("2", Kleur.SCHOPPEN),

@@ -9,17 +9,48 @@ class MainActivity : AppCompatActivity() {
 
     val spel = Spel()
 
+    private var spelerBeurt = true
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         updateFields()
-
     }
 
     fun updateFields()
     {
-        txt_totaal_pc.setText(getString(R.string.totaal, spel.totaalPc))
-        txt_totaal_speler.setText(getString(R.string.totaal, spel.totaalSpeler))
+
+        txt_totaal_speler.text = getString(R.string.totaal, spel.totaalSpeler)
+
+        if(spelerBeurt)
+        {
+            txt_totaal_pc.text = ""
+
+        } else {
+            txt_totaal_pc.text = getString(R.string.totaal, spel.totaalPc)
+        }
+
+        var i = 0
+        for (kaart in spel.kaartenPc) {
+            if (spelerBeurt && i == 0) {
+                txt_kaarten_pc.text = "(X)"
+                i++
+            } else {
+                txt_kaarten_pc.text = getString(R.string.kaartenrij, txt_kaarten_pc.text, kaart.naam)
+            }
+        }
+
+        i = 0
+        for (kaart in spel.kaartenSpeler)
+        {
+            if(i == 0)
+            {
+                txt_kaarten_speler.text = kaart.naam
+                i++
+            } else {
+                txt_kaarten_speler.text = getString(R.string.kaartenrij, txt_kaarten_speler.text, kaart.naam)
+            }
+        }
     }
 }

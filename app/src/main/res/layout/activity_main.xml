@@ -52,7 +52,7 @@
         android:layout_marginBottom="8dp"
         android:text="@string/speler"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-        app:layout_constraintBottom_toTopOf="@+id/textView6"
+        app:layout_constraintBottom_toTopOf="@+id/txt_kaarten_speler"
         app:layout_constraintEnd_toStartOf="@+id/txt_totaal_speler"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -67,7 +67,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/txt_kaarten_speler"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

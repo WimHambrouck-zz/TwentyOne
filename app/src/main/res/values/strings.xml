@@ -5,4 +5,5 @@
     <string name="speler">Speler:</string>
     <string name="hit_me">Hit me!</string>
     <string name="wachten">Wachten</string>
+    <string name="kaartenrij">%1$s, %2$s</string>
 </resources>
