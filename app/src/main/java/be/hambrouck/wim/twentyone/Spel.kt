@@ -44,6 +44,15 @@ class Spel {
         totaalPc += waardeVan(temp)
     }
 
+    fun selecteerWinnaar(): String {
+        if(totaalPc > totaalSpeler)
+        {
+            return "pc"
+        } else {
+            return "speler"
+        }
+    }
+
     private fun waardeVan(kaart: Kaart): Int {
         return when(kaart.naam) {
             "2", "3", "4", "5", "6", "7", "8", "9", "10" -> kaart.naam.toInt()
