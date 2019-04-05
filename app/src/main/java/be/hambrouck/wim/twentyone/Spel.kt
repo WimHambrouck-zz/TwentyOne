@@ -22,6 +22,9 @@ class Spel {
         kaartenSpeler = mutableListOf()
         deck.schudden()
 
+        totaalPc = 0
+        totaalSpeler = 0
+
         geefKaartAanSpeler()
         geefKaartAanSpeler()
 

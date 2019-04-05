@@ -8,4 +8,5 @@
     <string name="kaartenrij">%1$s, %2$s</string>
     <string name="gewonnen">Gewonnen!</string>
     <string name="verloren">KAPUT</string>
+    <string name="opnieuw">Opnieuw…</string>
 </resources>
