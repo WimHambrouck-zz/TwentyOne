@@ -4,8 +4,8 @@ class Spel {
     val geld = 500
 
     private val deck = Deck()
-    lateinit var kaartenPc: MutableList<Kaart>
-    lateinit var kaartenSpeler: MutableList<Kaart>
+    var kaartenPc: MutableList<Kaart> = mutableListOf()
+    var kaartenSpeler: MutableList<Kaart> = mutableListOf()
 
     var totaalPc = 0
         private set
@@ -18,13 +18,15 @@ class Spel {
     }
 
     fun reset() {
+        // lijsten ontvanen kaarten leegmaken en scores op 0 zetten
         kaartenPc = mutableListOf()
         kaartenSpeler = mutableListOf()
-        deck.schudden()
-
         totaalPc = 0
         totaalSpeler = 0
 
+        deck.schudden()
+
+        // speler en PC elke twee kaarten geven om te beginnen
         geefKaartAanSpeler()
         geefKaartAanSpeler()
 

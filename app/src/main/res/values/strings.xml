@@ -9,4 +9,9 @@
     <string name="gewonnen">Gewonnen!</string>
     <string name="verloren">KAPUT</string>
     <string name="opnieuw">Opnieuw…</string>
+    <string name="einde_spel">Einde spel</string>
+    <string name="computer_wint">Computer wint</string>
+    <string name="speler_wint">Speler wint</string>
+    <string name="gelijkstand">Gelijkstand</string>
+    <string name="speler_verliest">Speler verliest</string>
 </resources>

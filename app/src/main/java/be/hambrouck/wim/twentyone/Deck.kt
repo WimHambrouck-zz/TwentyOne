@@ -1,7 +1,5 @@
 package be.hambrouck.wim.twentyone
 
-
-
 class Deck(geschud: Boolean = true) {
     private val kaarten = listOf(
         Kaart("A", Kleur.SCHOPPEN),
@@ -62,11 +60,19 @@ class Deck(geschud: Boolean = true) {
 
     init {
         if(geschud)
+        {
             schudden()
+        } else {
+            sorteren()
+        }
     }
 
     fun schudden() {
         deck = kaarten.shuffled().toMutableList()
+    }
+
+    fun sorteren() {
+        deck = kaarten.toMutableList()
     }
 
     fun geefKaart(): Kaart {
